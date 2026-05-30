@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  omnimarket.mssql:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=Password123!
+    ports:
+      - "1441:1433"
+
+  omnimarket.mongodb:
+    image: mongo:latest
+    ports:
+      - "27018:27017"
+    volumes:
+      - mongo_data:/data/db
+
+  omnimarket.rabbitmq:
+    image: rabbitmq:3-management-alpine
+    ports:
+      - "5673:5672"
+      - "15673:15672"
+    environment:
+      - RABBITMQ_DEFAULT_USER=guest
+      - RABBITMQ_DEFAULT_PASS=guest
+
+  omnimarket.redis:
+    image: redis:alpine
+    ports:
+      - "6380:6379"
+
+volumes:
+  mongo_data:
