@@ -22,7 +22,7 @@ namespace OmniMarket.Catalog.API.Controllers
 		public async Task<IActionResult> Create(CreateProductCommand command)
 		{
 			var response = await Mediator.Send(command);
-			return Ok(new { Id = response, Message = "Ürün başarıyla eklendi (Simüle)." });
+			return Ok(new { Id = response, Message = "Ürün başarıyla eklendi" });
 		}
 	}
 }

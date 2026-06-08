@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.14.37314.3
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docker", "docker", "{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}"
 	ProjectSection(SolutionItems) = preProject
 		docker-compose.infrastructure.yml = docker-compose.infrastructure.yml
 		docker-compose.yml = docker-compose.yml
@@ -22,6 +22,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OmniMarket.Catalog.Infrastructure", "src\Services\Catalog\OmniMarket.Catalog.Infrastructure\OmniMarket.Catalog.Infrastructure.csproj", "{B788CD99-9622-446D-98B2-28FB5A4A4C72}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OmniMarket.Catalog.API", "src\Services\Catalog\OmniMarket.Catalog.API\OmniMarket.Catalog.API.csproj", "{432A860F-CE5E-4608-96D7-B88A42D2572D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Gateway", "Gateway", "{545C2914-12C0-48DD-9895-C48DB5ADAC32}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OmniMarket.Gateway", "src\Services\Gateway\OmniMarket.Gateway\OmniMarket.Gateway.csproj", "{8B0B88DF-E067-4E74-B690-D31B6FA00850}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +49,10 @@ Global
 		{432A860F-CE5E-4608-96D7-B88A42D2572D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{432A860F-CE5E-4608-96D7-B88A42D2572D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{432A860F-CE5E-4608-96D7-B88A42D2572D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B0B88DF-E067-4E74-B690-D31B6FA00850}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B0B88DF-E067-4E74-B690-D31B6FA00850}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B0B88DF-E067-4E74-B690-D31B6FA00850}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B0B88DF-E067-4E74-B690-D31B6FA00850}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -56,6 +64,8 @@ Global
 		{3FB93F3B-34AA-4717-8B70-8204D44C0322} = {44001C81-62AB-4614-B90F-22A81DF05D39}
 		{B788CD99-9622-446D-98B2-28FB5A4A4C72} = {44001C81-62AB-4614-B90F-22A81DF05D39}
 		{432A860F-CE5E-4608-96D7-B88A42D2572D} = {44001C81-62AB-4614-B90F-22A81DF05D39}
+		{545C2914-12C0-48DD-9895-C48DB5ADAC32} = {A058A695-8DAE-4326-B7A1-A4D6FD8FBFF9}
+		{8B0B88DF-E067-4E74-B690-D31B6FA00850} = {545C2914-12C0-48DD-9895-C48DB5ADAC32}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {274EB27C-8477-4E44-B6AF-863F08A54EA9}
