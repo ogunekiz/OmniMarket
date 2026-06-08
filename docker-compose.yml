@@ -39,3 +39,16 @@ services:
       - omnimarket.mongodb
     networks:
       - omnimarket.network
+
+  gateway.api:
+    image: omnimarket-gateway-api:latest
+    container_name: gateway.api
+    build:
+      context: .
+      dockerfile: src/Services/Gateway/OmniMarket.Gateway/Dockerfile
+    ports:
+      - "5000:8080"
+    depends_on:
+      - catalog.api
+    networks:
+      - omnimarket.network
