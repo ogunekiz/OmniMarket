@@ -6,11 +6,56 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}"
 	ProjectSection(SolutionItems) = preProject
 		docker-compose.infrastructure.yml = docker-compose.infrastructure.yml
+		docker-compose.yml = docker-compose.yml
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{A058A695-8DAE-4326-B7A1-A4D6FD8FBFF9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Catalog", "Catalog", "{44001C81-62AB-4614-B90F-22A81DF05D39}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OmniMarket.Catalog.Domain", "src\Services\Catalog\OmniMarket.Catalog.Domain\OmniMarket.Catalog.Domain.csproj", "{7DC7443D-F52A-4DB4-9D73-CD8AF4A340E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OmniMarket.Catalog.Application", "src\Services\Catalog\OmniMarket.Catalog.Application\OmniMarket.Catalog.Application.csproj", "{3FB93F3B-34AA-4717-8B70-8204D44C0322}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OmniMarket.Catalog.Infrastructure", "src\Services\Catalog\OmniMarket.Catalog.Infrastructure\OmniMarket.Catalog.Infrastructure.csproj", "{B788CD99-9622-446D-98B2-28FB5A4A4C72}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OmniMarket.Catalog.API", "src\Services\Catalog\OmniMarket.Catalog.API\OmniMarket.Catalog.API.csproj", "{432A860F-CE5E-4608-96D7-B88A42D2572D}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7DC7443D-F52A-4DB4-9D73-CD8AF4A340E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DC7443D-F52A-4DB4-9D73-CD8AF4A340E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DC7443D-F52A-4DB4-9D73-CD8AF4A340E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DC7443D-F52A-4DB4-9D73-CD8AF4A340E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FB93F3B-34AA-4717-8B70-8204D44C0322}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FB93F3B-34AA-4717-8B70-8204D44C0322}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FB93F3B-34AA-4717-8B70-8204D44C0322}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FB93F3B-34AA-4717-8B70-8204D44C0322}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B788CD99-9622-446D-98B2-28FB5A4A4C72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B788CD99-9622-446D-98B2-28FB5A4A4C72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B788CD99-9622-446D-98B2-28FB5A4A4C72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B788CD99-9622-446D-98B2-28FB5A4A4C72}.Release|Any CPU.Build.0 = Release|Any CPU
+		{432A860F-CE5E-4608-96D7-B88A42D2572D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{432A860F-CE5E-4608-96D7-B88A42D2572D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{432A860F-CE5E-4608-96D7-B88A42D2572D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{432A860F-CE5E-4608-96D7-B88A42D2572D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A058A695-8DAE-4326-B7A1-A4D6FD8FBFF9} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{44001C81-62AB-4614-B90F-22A81DF05D39} = {A058A695-8DAE-4326-B7A1-A4D6FD8FBFF9}
+		{7DC7443D-F52A-4DB4-9D73-CD8AF4A340E7} = {44001C81-62AB-4614-B90F-22A81DF05D39}
+		{3FB93F3B-34AA-4717-8B70-8204D44C0322} = {44001C81-62AB-4614-B90F-22A81DF05D39}
+		{B788CD99-9622-446D-98B2-28FB5A4A4C72} = {44001C81-62AB-4614-B90F-22A81DF05D39}
+		{432A860F-CE5E-4608-96D7-B88A42D2572D} = {44001C81-62AB-4614-B90F-22A81DF05D39}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {274EB27C-8477-4E44-B6AF-863F08A54EA9}
