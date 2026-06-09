@@ -39,5 +39,10 @@ services:
       dockerfile: src/Services/Gateway/OmniMarket.Gateway/Dockerfile
     ports:
       - "5000:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
     networks:
       - omnimarket-shared-network
+    depends_on:
+      - catalog.api
+      - order.api
