@@ -1,0 +1,51 @@
+name: omnimarket-infra
+
+networks:
+  omnimarket.network:
+    name: omnimarket-shared-network
+    driver: bridge
+
+services:
+  omnimarket.mongodb:
+    image: mongo:latest
+    container_name: omnimarket.mongodb
+    ports:
+      - "27018:27017"
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - omnimarket.network
+
+  omnimarket.mssql:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: omnimarket.mssql
+    ports:
+      - "1434:1433"
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=Password123
+    networks:
+      - omnimarket.network
+
+  omnimarket.rabbitmq:
+    image: rabbitmq:3-management-alpine
+    container_name: omnimarket.rabbitmq
+    ports:
+      - "5673:5672"
+      - "15673:15672"
+    environment:
+      - RABBITMQ_DEFAULT_USER=guest
+      - RABBITMQ_DEFAULT_PASS=guest
+    networks:
+      - omnimarket.network
+
+  omnimarket.redis:
+    image: redis:alpine
+    container_name: omnimarket.redis
+    ports:
+      - "6380:6379"
+    networks:
+      - omnimarket.network
+
+volumes:
+  mongo_data:
