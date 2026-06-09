@@ -3,11 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.14.37314.3
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docker", "docker", "{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}"
-	ProjectSection(SolutionItems) = preProject
-		docker\docker-compose.infrastructure.yml = docker\docker-compose.infrastructure.yml
-		docker\docker-compose.yml = docker\docker-compose.yml
-	EndProjectSection
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "deploy", "deploy", "{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
 EndProject
@@ -26,6 +22,26 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Gateway", "Gateway", "{545C2914-12C0-48DD-9895-C48DB5ADAC32}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OmniMarket.Gateway", "src\Services\Gateway\OmniMarket.Gateway\OmniMarket.Gateway.csproj", "{8B0B88DF-E067-4E74-B690-D31B6FA00850}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Order", "Order", "{E66DC503-F1BA-4D6E-BFA9-7D61CB72577A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OmniMarket.Order.Domain", "src\Services\Order\OmniMarket.Order.Domain\OmniMarket.Order.Domain.csproj", "{4187DC0B-F471-4888-8354-2C6EAB1495F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OmniMarket.Order.Application", "src\Services\Order\OmniMarket.Order.Application\OmniMarket.Order.Application.csproj", "{77F97450-DA37-499E-96D4-469ABF45D947}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OmniMarket.Order.Infrastructure", "src\Services\Order\OmniMarket.Order.Infrastructure\OmniMarket.Order.Infrastructure.csproj", "{35212048-D9C2-4B76-B779-4AE019430607}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OmniMarket.Order.API", "src\Services\Order\OmniMarket.Order.API\OmniMarket.Order.API.csproj", "{95F01B8E-E3F4-457A-8B73-DEA59918D68F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "infra", "infra", "{D4CF7252-A946-4F37-BF17-FD6982EAA39F}"
+	ProjectSection(SolutionItems) = preProject
+		deploy\infra\docker-compose.yml = deploy\infra\docker-compose.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "apps", "apps", "{194F0ACC-339B-4B5F-A6E9-92B9F4DC314C}"
+	ProjectSection(SolutionItems) = preProject
+		deploy\apps\docker-compose.yml = deploy\apps\docker-compose.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,6 +69,22 @@ Global
 		{8B0B88DF-E067-4E74-B690-D31B6FA00850}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8B0B88DF-E067-4E74-B690-D31B6FA00850}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8B0B88DF-E067-4E74-B690-D31B6FA00850}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4187DC0B-F471-4888-8354-2C6EAB1495F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4187DC0B-F471-4888-8354-2C6EAB1495F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4187DC0B-F471-4888-8354-2C6EAB1495F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4187DC0B-F471-4888-8354-2C6EAB1495F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77F97450-DA37-499E-96D4-469ABF45D947}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77F97450-DA37-499E-96D4-469ABF45D947}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77F97450-DA37-499E-96D4-469ABF45D947}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77F97450-DA37-499E-96D4-469ABF45D947}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35212048-D9C2-4B76-B779-4AE019430607}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35212048-D9C2-4B76-B779-4AE019430607}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35212048-D9C2-4B76-B779-4AE019430607}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35212048-D9C2-4B76-B779-4AE019430607}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95F01B8E-E3F4-457A-8B73-DEA59918D68F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95F01B8E-E3F4-457A-8B73-DEA59918D68F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95F01B8E-E3F4-457A-8B73-DEA59918D68F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95F01B8E-E3F4-457A-8B73-DEA59918D68F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -66,6 +98,13 @@ Global
 		{432A860F-CE5E-4608-96D7-B88A42D2572D} = {44001C81-62AB-4614-B90F-22A81DF05D39}
 		{545C2914-12C0-48DD-9895-C48DB5ADAC32} = {A058A695-8DAE-4326-B7A1-A4D6FD8FBFF9}
 		{8B0B88DF-E067-4E74-B690-D31B6FA00850} = {545C2914-12C0-48DD-9895-C48DB5ADAC32}
+		{E66DC503-F1BA-4D6E-BFA9-7D61CB72577A} = {A058A695-8DAE-4326-B7A1-A4D6FD8FBFF9}
+		{4187DC0B-F471-4888-8354-2C6EAB1495F6} = {E66DC503-F1BA-4D6E-BFA9-7D61CB72577A}
+		{77F97450-DA37-499E-96D4-469ABF45D947} = {E66DC503-F1BA-4D6E-BFA9-7D61CB72577A}
+		{35212048-D9C2-4B76-B779-4AE019430607} = {E66DC503-F1BA-4D6E-BFA9-7D61CB72577A}
+		{95F01B8E-E3F4-457A-8B73-DEA59918D68F} = {E66DC503-F1BA-4D6E-BFA9-7D61CB72577A}
+		{D4CF7252-A946-4F37-BF17-FD6982EAA39F} = {8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}
+		{194F0ACC-339B-4B5F-A6E9-92B9F4DC314C} = {8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {274EB27C-8477-4E44-B6AF-863F08A54EA9}

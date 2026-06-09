@@ -1,0 +1,43 @@
+name: omnimarket-apps
+
+networks:
+  omnimarket-shared-network:
+    external: true
+
+services:
+  catalog.api:
+    image: omnimarket-catalog-api:latest
+    container_name: catalog.api
+    build:
+      context: ../..
+      dockerfile: src/Services/Catalog/OmniMarket.Catalog.API/Dockerfile
+    ports:
+      - "5001:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+    networks:
+      - omnimarket-shared-network
+
+  order.api:
+    image: omnimarket-order-api:latest
+    container_name: order.api
+    build:
+      context: ../..
+      dockerfile: src/Services/Order/OmniMarket.Order.API/Dockerfile
+    ports:
+      - "5002:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+    networks:
+      - omnimarket-shared-network
+
+  gateway.api:
+    image: omnimarket-gateway-api:latest
+    container_name: gateway.api
+    build:
+      context: ../..
+      dockerfile: src/Services/Gateway/OmniMarket.Gateway/Dockerfile
+    ports:
+      - "5000:8080"
+    networks:
+      - omnimarket-shared-network
