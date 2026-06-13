@@ -43,6 +43,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "apps", "apps", "{194F0ACC-3
 		deploy\apps\docker-compose.yml = deploy\apps\docker-compose.yml
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BuildingBlocks", "BuildingBlocks", "{E7AAA765-B3CC-4A82-98F6-F21D9B223239}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OmniMarket.Shared", "src\BuildingBlocks\OmniMarket.Shared\OmniMarket.Shared.csproj", "{BEA6A3FE-864A-42C1-8B98-3BD20B9E7905}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -85,6 +89,10 @@ Global
 		{95F01B8E-E3F4-457A-8B73-DEA59918D68F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{95F01B8E-E3F4-457A-8B73-DEA59918D68F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{95F01B8E-E3F4-457A-8B73-DEA59918D68F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BEA6A3FE-864A-42C1-8B98-3BD20B9E7905}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEA6A3FE-864A-42C1-8B98-3BD20B9E7905}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEA6A3FE-864A-42C1-8B98-3BD20B9E7905}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEA6A3FE-864A-42C1-8B98-3BD20B9E7905}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -105,6 +113,8 @@ Global
 		{95F01B8E-E3F4-457A-8B73-DEA59918D68F} = {E66DC503-F1BA-4D6E-BFA9-7D61CB72577A}
 		{D4CF7252-A946-4F37-BF17-FD6982EAA39F} = {8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}
 		{194F0ACC-339B-4B5F-A6E9-92B9F4DC314C} = {8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}
+		{E7AAA765-B3CC-4A82-98F6-F21D9B223239} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{BEA6A3FE-864A-42C1-8B98-3BD20B9E7905} = {E7AAA765-B3CC-4A82-98F6-F21D9B223239}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {274EB27C-8477-4E44-B6AF-863F08A54EA9}

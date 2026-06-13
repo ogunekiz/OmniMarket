@@ -7,11 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MassTransit" Version="8.3.6" />
     <PackageReference Include="MediatR" Version="14.1.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="10.0.8" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\BuildingBlocks\OmniMarket.Shared\OmniMarket.Shared.csproj" />
     <ProjectReference Include="..\OmniMarket.Order.Domain\OmniMarket.Order.Domain.csproj" />
   </ItemGroup>
 

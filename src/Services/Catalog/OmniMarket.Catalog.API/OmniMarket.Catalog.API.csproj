@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\BuildingBlocks\OmniMarket.Shared\OmniMarket.Shared.csproj" />
     <ProjectReference Include="..\OmniMarket.Catalog.Application\OmniMarket.Catalog.Application.csproj" />
     <ProjectReference Include="..\OmniMarket.Catalog.Infrastructure\OmniMarket.Catalog.Infrastructure.csproj" />
   </ItemGroup>

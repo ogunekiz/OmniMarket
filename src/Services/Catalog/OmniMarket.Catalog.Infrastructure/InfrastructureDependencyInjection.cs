@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using MassTransit;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using OmniMarket.Catalog.Application.Configurations;
 using OmniMarket.Catalog.Application.Interfaces;
@@ -14,6 +15,20 @@ namespace OmniMarket.Catalog.Infrastructure
 			services.Configure<DatabaseSettings>(configuration.GetSection(nameof(DatabaseSettings)));
 
 			services.AddScoped<IProductRepository, ProductRepository>();
+
+			// 🔥 MassTransit & RabbitMQ Altyapısı (Publisher olarak)
+			services.AddMassTransit(x =>
+			{
+				x.UsingRabbitMq((context, cfg) =>
+				{
+					// Ortak Docker ağındaki RabbitMQ konteyner ismi ve iç portu
+					cfg.Host("omnimarket.rabbitmq", "/", h =>
+					{
+						h.Username("guest");
+						h.Password("guest");
+					});
+				});
+			});
 
 			return services;
 		}

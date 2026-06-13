@@ -1,6 +1,8 @@
-﻿using MediatR;
+﻿using MassTransit;
+using MediatR;
 using OmniMarket.Catalog.Application.Interfaces;
 using OmniMarket.Catalog.Domain.Entities;
+using OmniMarket.Shared;
 
 namespace OmniMarket.Catalog.Application.Features.Products.Commands
 {
@@ -14,10 +16,12 @@ namespace OmniMarket.Catalog.Application.Features.Products.Commands
 	public class CreateProductCommandHandler : IRequestHandler<CreateProductCommand, string>
 	{
 		private readonly IProductRepository _productRepository;
+		private readonly IPublishEndpoint _publishEndpoint;
 
-		public CreateProductCommandHandler(IProductRepository productRepository)
+		public CreateProductCommandHandler(IProductRepository productRepository, IPublishEndpoint publishEndpoint)
 		{
 			_productRepository = productRepository;
+			_publishEndpoint = publishEndpoint;
 		}
 
 		public async Task<string> Handle(CreateProductCommand request, CancellationToken cancellationToken)
@@ -33,6 +37,15 @@ namespace OmniMarket.Catalog.Application.Features.Products.Commands
 			};
 
 			await _productRepository.CreateAsync(product);
+
+			await _publishEndpoint.Publish(new ProductPriceChangedEvent
+			{
+				ProductId = product.Id,
+				Name = product.Name,
+				NewPrice = product.Price,
+				ChangedDate = DateTime.UtcNow
+			}, cancellationToken);
+
 			return product.Id;
 		}
 	}
